@@ -141,7 +141,7 @@ void RpcServerTrackedDeviceProvider::RunFrame() {
         if (!hasStubbed) {
 #if _WIN32
             // Stub out code at 0x11d0c0 with a ret in driver_playstation_vr2_orig.dll to avoid crash.
-            HMODULE hModuleo = LoadLibraryW(L"C:\\Program Files (x86)\\Steam\\steamapps\\common\\PlayStation VR2 App\\SteamVR_Plug-In\\bin\\win64\\driver_playstation_vr2_orig.dll");
+            HMODULE hModuleo = GetModuleHandleW(L"driver_playstation_vr2_orig.dll");
 
             void* function = reinterpret_cast<char*>(hModuleo) + 0x11d0c0;
             DWORD oldProtect;
