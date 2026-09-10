@@ -7,13 +7,24 @@ Allows you to run Windows-only SteamVR drivers on Linux, using Wine/Proton.
 > [!NOTE]
 > If you want to get started with Playstation VR2 on Ignition, go to the [Linux support](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Linux-support) wiki page for PSVR2Toolkit.
 
-Currently, Ignition is packaged for Linux to run Windows drivers. The Ignition package (named Ignition-Linux-Windows) can be extracted to a folder like `/opt/ignition`, or somewhere that is at least accessible to applications running under the Steam Linux Runtime. `install_ignition.sh <driver path>` will create a new `<driver path>/bin/linux64` directory for SteamVR to load the Windows driver through Ignition. Ignition is configured by `ignition.json`, with the install script automatically filling out the config to run the Windows SteamVR driver under Proton. You must at least install Proton from Steam, preferably **Proton Experimental**. You can use `driver_install.sh` in the `linux64` folder to install the driver for SteamVR to load.
+Currently, Ignition is packaged for Linux to run Windows OpenVR drivers. The Ignition package (named Ignition-Linux-Windows) can be extracted to a folder like `/opt/ignition`, or somewhere that is at least accessible to applications running under the Steam Linux Runtime. `install_ignition.sh <driver path>` will create a new `<driver path>/bin/linux64` directory for SteamVR to load the Windows driver through Ignition. Ignition is configured by `ignition.json`, with the install script automatically filling out the config to run the Windows SteamVR driver under Proton. You must at least install Proton from Steam, preferably **Proton Experimental**. You can use `driver_install.sh` in the `linux64` folder to install the driver for SteamVR to load.
 
 You may also use Ignition on Windows to run Windows drivers on top of it, which is helpful for validating driver behavior due to Ignition. Currently, there is no packaging for Windows, so you must build and set it up yourself.
 
 # Supported Drivers
 
-Currently, Ignition only supports PlayStation VR2 (using [PSVR2Toolkit](https://github.com/BnuuySolutions/PSVR2Toolkit) with the experimental release and some minor modifications). Support for more drivers is something that will hopefully happen over time. Right now, most drivers don't work under Wine/Proton due to no USB support or missing dependencies.
+Ignition supports these drivers:
+- [Oasis Driver](https://store.steampowered.com/app/3824490/Oasis_Driver_for_Windows_Mixed_Reality/)
+    - The preview branch has Ignition already included along with changes in the driver to work under Wine properly. See the [update post here](https://store.steampowered.com/news/app/3824490/view/675130991105279383?l=english).
+- PlayStation VR2 (using [PSVR2Toolkit](https://github.com/BnuuySolutions/PSVR2Toolkit))
+    - The experimental release of PSVR2Toolkit is required to make the PSVR2 driver work under Wine.
+    
+Most drivers that don't work under Wine/Proton usually have these problems:
+    - Required USB support (no provided by Wine currently)
+    - Missing dependencies in Windows libraries that need to be implemented in Wine
+    - Specific OpenVR interfaces or versions (Ignition does not implement all versions of interfaces)
+
+More drivers will be supported over time as patches for each driver are made.
 
 # How it works
 
