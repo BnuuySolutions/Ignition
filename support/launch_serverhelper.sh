@@ -2,7 +2,8 @@
 
 unset SteamGameId
 
-# Add registry file for Ignition to ensure PSVR2 Sense controllers work
-./proton run reg import ./wine_psvr2_hidraw.reg
+# By default, Wine/Proton does not use hidraw.
+# This is required for practically all HID devices like PSVR2 Sense controllers, WMR headsets, Rift, etc.
+./proton run reg import ./wine_hidraw.reg
 
 ./proton run "$@"

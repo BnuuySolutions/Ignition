@@ -75,7 +75,7 @@ cp "$SCRIPT_DIR/proton" "$LINUX_BIN_DIR/"
 cp "$SCRIPT_DIR/launch_serverhelper.sh" "$LINUX_BIN_DIR/"
 cp "$SCRIPT_DIR/driver_install.sh" "$LINUX_BIN_DIR/"
 cp "$SCRIPT_DIR/driver_uninstall.sh" "$LINUX_BIN_DIR/"
-cp "$SCRIPT_DIR/wine_psvr2_hidraw.reg" "$LINUX_BIN_DIR/"
+cp "$SCRIPT_DIR/wine_hidraw.reg" "$LINUX_BIN_DIR/"
 
 
 echo "Creating symbolic link for the driver..."
