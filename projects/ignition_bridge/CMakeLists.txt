@@ -13,6 +13,9 @@ target_compile_definitions(ignition_bridge_objs PUBLIC -DNOMINMAX -D_CRT_SECURE_
 target_include_directories(ignition_bridge_objs PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${IGNITION_ROOT}/externals/openvr ${IGNITION_ROOT}/externals/nlohmann)
 
 if (HAS_WINEBUILD)
+    # Winebuild looks at the binary symbols. LTO breaks that.
+    target_compile_options(ignition_bridge_objs PRIVATE -fno-lto)
+
     find_library(WINECRT0_LIBRARY NAMES winecrt0 PATHS /usr/lib/wine/x86_64-unix /usr/lib64/wine /usr/lib/wine /usr/lib/x86_64-linux-gnu/wine /usr/lib/x86_64-linux-gnu/wine/x86_64-unix)
     find_library(WINE_KERNEL32_LIBRARY NAMES kernel32 PATHS /usr/lib/wine/x86_64-unix /usr/lib64/wine /usr/lib/wine /usr/lib/x86_64-linux-gnu/wine /usr/lib/x86_64-linux-gnu/wine/x86_64-unix)
 
