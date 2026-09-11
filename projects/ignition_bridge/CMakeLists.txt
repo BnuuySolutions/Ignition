@@ -27,8 +27,6 @@ if (HAS_WINEBUILD)
         VERBATIM
     )
 
-    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/ignition_bridge.s PROPERTIES LANGUAGE C)
-
     add_library(ignition_bridge SHARED
         $<TARGET_OBJECTS:ignition_bridge_objs>
         ${CMAKE_CURRENT_BINARY_DIR}/ignition_bridge.s
