@@ -15,7 +15,7 @@ You may also use Ignition on Windows to run Windows drivers on top of it, which 
 
 Ignition supports these drivers:
 - [Oasis Driver](https://store.steampowered.com/app/3824490/Oasis_Driver_for_Windows_Mixed_Reality/)
-    - The preview branch has Ignition already included along with changes in the driver to work under Wine properly. See the [update post here](https://store.steampowered.com/news/app/3824490/view/675130991105279383?l=english).
+    - The public branch already has Ignition already included and configured along with changes in the driver to work properly under a custom Wine branch. You will need udev rules setup, either by the one in the root of the Oasis install (`70-wmr.rules`) or from `xr-hardware`. If you encounter issues with Oasis or SteamVR, join the [Linux VR Adventures Discord/Matrix](https://vronlinux.org/docs/community/) for help.
 - PlayStation VR2 (using [PSVR2Toolkit](https://github.com/BnuuySolutions/PSVR2Toolkit))
     - The experimental release of PSVR2Toolkit is required to make the PSVR2 driver work under Wine.
     
