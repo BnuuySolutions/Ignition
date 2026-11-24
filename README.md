@@ -20,7 +20,7 @@ Ignition supports these drivers:
     - The experimental release of PSVR2Toolkit is required to make the PSVR2 driver work under Wine.
     
 Most drivers that don't work under Wine/Proton usually have these problems:
-- Required USB support (no provided by Wine currently)
+- Required USB support (not provided by Wine currently)
 - Missing dependencies in Windows libraries that need to be implemented in Wine
 - Specific OpenVR interfaces or versions (Ignition does not implement all versions of interfaces)
 
