@@ -8,6 +8,9 @@ POSSIBLE_PATHS=(
     "$HOME/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh"
     "$HOME/.local/share/Steam/steamapps/common/SteamVR/bin/vrpathreg.sh"
     "$HOME/.steam/root/steamapps/common/SteamVR/bin/vrpathreg.sh"
+    "$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh"
+    "$HOME/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/SteamVR/bin/vrpathreg.sh"
+    "$HOME/.var/app/com.valvesoftware.Steam/.steam/root/steamapps/common/SteamVR/bin/vrpathreg.sh"
 )
 
 VRPATHREG=""
